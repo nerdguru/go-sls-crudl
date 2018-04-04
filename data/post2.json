@@ -1,0 +1,24 @@
+{
+  "year" : 2013,
+  "title" : "Hunger Games: Catching Fire",
+  "info" : {
+    "directors" : [
+      "Francis Lawrence"
+    ],
+    "release_date" : "2013-11-22T00:00:00Z",
+    "rating" : 7.6,
+    "genres" : [
+      "Action",
+      "Adventure"
+    ],
+    "image_url" : "http://ia.media-imdb.com/images/N/O9ERWAU7FS797AJ7LU8HN09AMUP908RLlo5JF90EWR7LJKQ7@@._V1_SX400_.jpg",
+    "plot" : "Katniss Everdeen and Peeta Mellark become targets of the Capitol after their victory in the 74th Hunger Games sparks a rebellion in the Districts of Panem.",
+    "rank" : 1,
+    "running_time_secs" : 8760,
+    "actors" : [
+      "Jennifer Lawrence",
+      "Josh Hutcherson",
+      "Liam Hemsworth"
+    ]
+  }
+}
