@@ -92,7 +92,7 @@ Once deployed and substituting your `<base URL>` the following CURL commands can
 ### POST
 
 ```bash
-curl -X POST https:<base URL>/movies -d @data/post1.json
+curl -X POST https:<base URL> -d @data/post1.json
 ```
 Which should result in the DynamoDB table looking like this:
 
@@ -105,7 +105,7 @@ Rinse/repeat for other data files to yeild:
 ### GET Specific Item
 Using the year and title (replacing spaces wiht '-' or '+'), you can now obtain an item as follows (prettified output):
 ```bash
-curl https://<base URL>/movies/2013/Hunger-Games-Catching-Fire
+curl https://<base URL>/2013/Hunger-Games-Catching-Fire
 {
   "year": 2013,
   "title": "Hunger Games Catching Fire",
@@ -119,7 +119,7 @@ curl https://<base URL>/movies/2013/Hunger-Games-Catching-Fire
 ### GET a List of Items
 You can list items by year as follows (prettified output):
 ```bash
-curl https://<base URL>/movies/2013
+curl https://<base URL>/2013
 [
   {
     "year": 2013,
@@ -143,7 +143,7 @@ curl https://<base URL>/movies/2013
 ### DELETE Specific Item
 Using the same year and title specifiers, you can delete as follows:
 ```bash
-curl -X DELETE https://<base URL>/movies/2013/Hunger-Games-Catching-Fire
+curl -X DELETE https://<base URL>/2013/Hunger-Games-Catching-Fire
 ```
 Which should result in the DynamoDB table looking like this:
 
@@ -152,7 +152,7 @@ Which should result in the DynamoDB table looking like this:
 ### UPDATE Specific Item
 You can update as follows:
 ```bash
-curl -X PUT https:<base URL>/movies -d @data/put3.json
+curl -X PUT https:<base URL> -d @data/put3.json
 ```
 Which should result in the DynamoDB table looking like this:
 
