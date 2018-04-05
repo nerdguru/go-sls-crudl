@@ -9,7 +9,7 @@ Note that, instead of using the `create_table.go` to set up the initial table li
 * functions/get.do - GET method for reading a specific item
 * functions/delete.do - DELETE method for deleting a specific item
 * functions/put.do - PUT method for updating an existing item
-* functions/list.do - GET method for listing all or a subset of items
+* functions/list-by-year.do - GET method for listing all or a subset of items
 * img/* - Images of DynamoDB tables to make this Readme easier to follow
 * moviedao/moviedao.do - DAO wrapper around the DynamoDB calls
 * data/XXX.json - Set of sample data files for POST and PUT actions
