@@ -62,18 +62,14 @@ resources:
       DeletionPolicy: Retain
       Properties:
         AttributeDefinitions:
-          -
-            AttributeName: year
+          - AttributeName: year
             AttributeType: N
-          -
-            AttributeName: title
+          - AttributeName: title
             AttributeType: S
         KeySchema:
-          -
-            AttributeName: year
+          - AttributeName: year
             KeyType: HASH
-          -
-            AttributeName: title
+          - AttributeName: title
             KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
