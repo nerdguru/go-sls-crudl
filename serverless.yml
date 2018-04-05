@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: go1.x
   environment:
-        TABLE_NAME: go-sls-crudl-${opt:stage, self:provider.stage}
+        TABLE_NAME: movies-${opt:stage, self:provider.stage}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -28,31 +28,31 @@ functions:
     handler: bin/list-by-year
     events:
       - http:
-          path: go-sls-crudl/{year}
+          path: movies/{year}
           method: get
   get:
     handler: bin/get
     events:
       - http:
-          path: go-sls-crudl/{year}/{title}
+          path: movies/{year}/{title}
           method: get
   post:
     handler: bin/post
     events:
       - http:
-          path: go-sls-crudl
+          path: movies
           method: post
   delete:
     handler: bin/delete
     events:
       - http:
-          path: go-sls-crudl/{year}/{title}
+          path: movies/{year}/{title}
           method: delete
   put:
     handler: bin/put
     events:
       - http:
-          path: go-sls-crudl
+          path: movies
           method: put
 
 resources:
@@ -78,4 +78,4 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: 'go-sls-crudl-${opt:stage, self:provider.stage}'
+        TableName: 'movies-${opt:stage, self:provider.stage}'
