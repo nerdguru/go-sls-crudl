@@ -1,4 +1,4 @@
-package moviedao
+package main
 
 import (
 	"encoding/json"

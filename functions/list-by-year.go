@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"go-sls-crudl/moviedao"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
@@ -16,7 +15,7 @@ type Response struct {
 func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	// Make the call to the DAO with params found in the path
 	fmt.Println("Path vars: ", request.PathParameters["year"])
-	items, err := moviedao.ListByYear(request.PathParameters["year"])
+	items, err := ListByYear(request.PathParameters["year"])
 	if err != nil {
 		panic(fmt.Sprintf("Failed to find Item, %v", err))
 	}

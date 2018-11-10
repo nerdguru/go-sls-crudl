@@ -2,17 +2,20 @@
 
 
 [[projects]]
+  digest = "1:d5039f72505274cddd25fef3b4790e7d985eaf063a0c7df1363ed6292ddc30fb"
   name = "github.com/aws/aws-lambda-go"
   packages = [
     "events",
     "lambda",
     "lambda/messages",
-    "lambdacontext"
+    "lambdacontext",
   ]
+  pruneopts = ""
   revision = "6e2e37798efbb1dfd8e9c6681702e683a6046517"
   version = "v1.0.1"
 
 [[projects]]
+  digest = "1:ea5f610419c5dfdbf17c507bc449b81dafda953e94a003c9669bfa643767fe4f"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -42,25 +45,38 @@
     "service/dynamodb",
     "service/dynamodb/dynamodbattribute",
     "service/dynamodb/expression",
-    "service/sts"
+    "service/sts",
   ]
+  pruneopts = ""
   revision = "788eb15477cf129a45d8e1d0af5f533348f4125d"
   version = "v1.12.78"
 
 [[projects]]
+  digest = "1:a00483fe4106b86fb1187a92b5cf6915c85f294ed4c129ccbe7cb1f1a06abd46"
   name = "github.com/go-ini/ini"
   packages = ["."]
+  pruneopts = ""
   revision = "32e4c1e6bc4e7d0d8451aa6b75200d19e37a536a"
   version = "v1.32.0"
 
 [[projects]]
+  digest = "1:6f49eae0c1e5dab1dafafee34b207aeb7a42303105960944828c2079b92fc88e"
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
+  pruneopts = ""
   revision = "0b12d6b5"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "3ac487e39af6b47736eb934f4d62970d97196ed4f8aff1c6359a5ddda2e1ec91"
+  input-imports = [
+    "github.com/aws/aws-lambda-go/events",
+    "github.com/aws/aws-lambda-go/lambda",
+    "github.com/aws/aws-sdk-go/aws",
+    "github.com/aws/aws-sdk-go/aws/session",
+    "github.com/aws/aws-sdk-go/service/dynamodb",
+    "github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute",
+    "github.com/aws/aws-sdk-go/service/dynamodb/expression",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
