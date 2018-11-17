@@ -1,9 +1,9 @@
-build: | vendor
-	env GOOS=linux go build -ldflags="-s -w" -o bin/get functions/get.go functions/moviedao.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/post functions/post.go functions/moviedao.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/delete functions/delete.go functions/moviedao.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/put functions/put.go functions/moviedao.go
-	env GOOS=linux go build -ldflags="-s -w" -o bin/list-by-year functions/list-by-year.go functions/moviedao.go
+go_apps = bin/get bin/post bin/delete bin/put bin/list-by-year
+
+bin/% : functions/%.go
+	env GOOS=linux go build -ldflags="-s -w" -o $@ $< functions/comicinfo_dao.go functions/shared.go
+
+build: $(go_apps) | vendor
 
 vendor: Gopkg.toml
 	dep ensure
