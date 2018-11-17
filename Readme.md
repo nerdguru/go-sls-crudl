@@ -32,7 +32,7 @@ env GOOS=linux go build -ldflags="-s -w" -o bin/delete functions/delete.go
 env GOOS=linux go build -ldflags="-s -w" -o bin/put functions/put.go
 env GOOS=linux go build -ldflags="-s -w" -o bin/list-by-year functions/list-by-year.go
 ```
-What is this makefile doing?  First, it runs the `dep ensure` command, which will scan your underlying .go files looking for dependencies to install, which it will grab off of Github as needed and place under a newly created `vendor` folder under `go-sls-crudl`.  Then, it'll compile the individual function files, placing the resulting binaries in the `bin` folder.  Keep in mind that this is an extremely dumb makefile in that it will compile every file every time as opposed to a smarter one that would only recompile files that have changed.  Blame my noobness with Golang.
+What is this makefile doing?  First, it runs the `dep ensure` command, which will scan your underlying .go files looking for dependencies to install, which it will grab off of Github as needed and place under a newly created `vendor` folder under `go-sls-crudl`.  Then, it'll compile the individual function files, placing the resulting binaries in the `bin` folder.
 
 If you look at the `serverless.yml` file, it makes references to those recently compiled function binaries, one for each function in our service and each one corresponding to a different verb/path in our API we're creating.  Deploy the entire service with the 'sls' command:
 
